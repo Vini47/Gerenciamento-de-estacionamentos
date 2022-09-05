@@ -8,7 +8,11 @@ public class Estacionamento {
     private String horaAbertura;
     private String horaFechamento;
     private double porcentagemLucro;
-
+    private double valorFracao;
+    private double valorDescontoHora;
+    private double valorMensalista;
+    private double valorDiariaDiurna;
+    private double valorDiariaNoturna;
 
     @Override
     public String toString() {
@@ -19,16 +23,26 @@ public class Estacionamento {
                 ", horaAbertura='" + horaAbertura + '\'' +
                 ", horaFechamento='" + horaFechamento + '\'' +
                 ", porcentagemLucro=" + porcentagemLucro +
+                ", valorFracao=" + valorFracao +
+                ", valorDescontoHora=" + valorDescontoHora +
+                ", valorMensalista=" + valorMensalista +
+                ", valorDiariaDiurna=" + valorDiariaDiurna +
+                ", valorDiariaNoturna=" + valorDiariaNoturna +
                 '}';
     }
 
-    public Estacionamento(String nomeEmpresa, String nomeEstacionamento, int capacidade, String horaAbertura, String horaFechamento, double porcentagemLucro) {
+    public Estacionamento(String nomeEmpresa, String nomeEstacionamento, int capacidade, String horaAbertura, String horaFechamento, double porcentagemLucro, double valorFracao, double valorDescontoHora, double valorMensalista, double valorDiariaDiurna, double valorDiariaNoturna) {
         this.nomeEmpresa = nomeEmpresa;
         this.nomeEstacionamento = nomeEstacionamento;
         this.capacidade = capacidade;
         this.horaAbertura = horaAbertura;
         this.horaFechamento = horaFechamento;
         this.porcentagemLucro = porcentagemLucro;
+        this.valorFracao = valorFracao;
+        this.valorDescontoHora = valorDescontoHora;
+        this.valorMensalista = valorMensalista;
+        this.valorDiariaDiurna = valorDiariaDiurna;
+        this.valorDiariaNoturna = valorDiariaNoturna;
     }
 
     public String getNomeEmpresa() {
@@ -77,6 +91,46 @@ public class Estacionamento {
 
     public void setPorcentagemLucro(double porcentagemLucro) {
         this.porcentagemLucro = porcentagemLucro;
+    }
+
+    public double getValorFracao() {
+        return valorFracao;
+    }
+
+    public void setValorFracao(double valorFracao) {
+        this.valorFracao = valorFracao;
+    }
+
+    public double getValorDescontoHora() {
+        return valorDescontoHora;
+    }
+
+    public void setValorDescontoHora(double valorDescontoHora) {
+        this.valorDescontoHora = valorDescontoHora;
+    }
+
+    public double getValorMensalista() {
+        return valorMensalista;
+    }
+
+    public void setValorMensalista(double valorMensalista) {
+        this.valorMensalista = valorMensalista;
+    }
+
+    public double getValorDiariaDiurna() {
+        return valorDiariaDiurna;
+    }
+
+    public void setValorDiariaDiurna(double valorDiariaDiurna) {
+        this.valorDiariaDiurna = valorDiariaDiurna;
+    }
+
+    public double getValorDiariaNoturna() {
+        return valorDiariaNoturna;
+    }
+
+    public void setValorDiariaNoturna(double valorDiariaNoturna) {
+        this.valorDiariaNoturna = valorDiariaNoturna;
     }
 }
 
