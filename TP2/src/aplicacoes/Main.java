@@ -1,17 +1,20 @@
 package aplicacoes;
 
+import models.Acesso;
 import models.Estacionamento;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 
         ArrayList<Estacionamento> estacionamentos = new ArrayList<Estacionamento>();
-
+        ArrayList<Acesso> acessos = new ArrayList<Acesso>();
         char menu;
+
         do {
             System.out.println("-------MENU-------");
             System.out.println("1. Cadastrar Estacionamento");
@@ -37,12 +40,79 @@ public class Main {
                     numEstacionamento = ler.nextInt() ;
                     clearBuffer(ler);
                     if(numEstacionamento <= estacionamentos.size() ) {
-                        System.out.println("aqui devemos fazer os acesso");
+                        System.out.println("-------Informções do Estacionamento------");
+                        System.out.println(estacionamentos.get(numEstacionamento));
+                        System.out.println("------------------------------------------");
+                        System.out.println("Qual acesso deseja cadastras");
+                        System.out.println("1. Acesso por tempo");
+                        System.out.println("2. Cadastrar Evento");
+                        char escolha = ler.next().charAt(0);
+                        clearBuffer(ler);
+                        switch (escolha) {
+                            case '1' -> {
+
+                                boolean continuar;
+                                do {
+                                    System.out.println("Insira a placa do veículo:");
+                                    String placa = ler.nextLine();
+
+                                    System.out.println("O proprietário do veículo é um mensalista?");
+                                    System.out.println("Digite 'S' para sim e qualquer outra caracter para não");
+                                    boolean mensalista = false;
+                                    char mensal = ler.next().charAt(0);
+                                    clearBuffer(ler);
+
+                                    if (mensal == 'S' | mensal == 's') {
+                                        mensalista = true;
+                                    }
+
+                                    System.out.println("Insira o dia de entrada do veículo e o horário: ");
+                                    System.out.println("OBS = Utilize o seguinte formato");
+                                    System.out.println("ano-mes-diaThora:minutos:segundos");
+                                    System.out.println("Exemplo: 2022-04-19T10:48:25");
+                                    String entrada = ler.nextLine();
+                                    LocalDateTime dateTimeEntrada = LocalDateTime.parse(entrada);
+
+                                    System.out.println("Insira o dia de saída do veículo e o horário: ");
+                                    System.out.println("OBS = Utilize o seguinte formato");
+                                    System.out.println("ano-mes-diaThora:minutos:segundos");
+                                    System.out.println("Exemplo: 2022-04-19T10:48:25");
+                                    String saida = ler.nextLine();
+                                    LocalDateTime dateTimeSaida = LocalDateTime.parse(saida);
+
+                                    Acesso acesso = new Acesso(placa, mensalista, dateTimeEntrada, dateTimeSaida);
+                                    acessos.add(acesso);
+
+                                    estacionamentos.get(numEstacionamento).setAcesso(acesso);
+                                    //estacionamentos.get(numEstacionamento).setAcesso(acesso);
+                                    System.out.println(estacionamentos);
+
+                                    continuar = true;
+                                    System.out.println("Deseja adicionar outro acesso?");
+                                    System.out.println("Digite 'N' para não e voltar ao menu");
+                                    char decisao = ler.next().charAt(0);
+                                    if (decisao == 'N' | decisao == 'n') {
+                                        continuar = false;
+                                    }
+                                    clearBuffer(ler);
+                                } while (continuar);
+
+                                System.out.println("----------");
+                                System.out.println(acessos);
+                                System.out.println("----------");
+                                System.out.println(estacionamentos);
+                            }
+                            case '2' -> {
+                                System.out.println("si");
+                            }
+                            default -> {
+                                System.out.println("OPÇÃO INVÁLIDA!");
+                            }
+                        }
 
                     }else{
                         System.out.println("OPÇÃO INVÁLIDA");
                     }
-
 
                 }
                 case '3' -> {
@@ -54,7 +124,10 @@ public class Main {
                     System.out.println("Escolha um dos estacionamentos cadastrados: ");
 
                 }
-                case '5' -> System.out.println("case4");
+                case '5' ->{
+                    System.out.println("ss");
+                }
+
                 case '0' -> System.out.println("PROGRAMA ENCERRADO!");
                 default -> System.out.println("OPÇÃO INVALÍDA!");
             }
@@ -124,7 +197,6 @@ public class Main {
 
         estacionamentos.add(estacionamento);
     }
-
 
     private static void clearBuffer(Scanner ler) {
         if (ler.hasNextLine()) {
