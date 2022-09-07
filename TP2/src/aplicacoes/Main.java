@@ -62,6 +62,7 @@ public class Main {
     // teste vini
 
    // teste do bob
+    // teste de bunda
     private static void relatorioRegistros(ArrayList<Estacionamento> estacionamentos, Scanner ler) {
         System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatÃ³rio");
         String pesquisa = ler.nextLine();
