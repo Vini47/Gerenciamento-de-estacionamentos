@@ -1,10 +1,18 @@
 package models;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+
 public class Acesso {
     private String placa;
     private boolean mensalista;
     private LocalDateTime diaHoraEntrada;
     private LocalDateTime diaHoraSaida;
+
+    //construtor para acesso de Evento
+    public Acesso(String placa, boolean mensalista) {
+        this.placa = placa;
+        this.mensalista = mensalista;
+    }
 
     public Acesso(String placa, boolean mensalista, LocalDateTime diaHoraEntrada, LocalDateTime diaHoraSaida) {
         this.placa = placa;
@@ -22,6 +30,7 @@ public class Acesso {
                 ", diaHoraSaida=" + diaHoraSaida +
                 '}';
     }
+
 
     public String getPlaca() {
         return placa;

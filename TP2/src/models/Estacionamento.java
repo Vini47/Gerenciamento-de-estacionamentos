@@ -17,25 +17,6 @@ public class Estacionamento {
     private double valorDiariaNoturna;
     private ArrayList<Acesso> acessos = new ArrayList<Acesso>();
 
-//    @Override
-//    public String toString() {
-//
-//        return "Estacionamento{" +
-//                "nomeEmpresa='" + nomeEmpresa + '\'' +
-//                ", nomeEstacionamento='" + nomeEstacionamento + '\'' +
-//                ", capacidade=" + capacidade +
-//                ", horaAbertura='" + horaAbertura + '\'' +
-//                ", horaFechamento='" + horaFechamento + '\'' +
-//                ", porcentagemLucro=" + porcentagemLucro +
-//                ", valorFracao=" + valorFracao +
-//                ", valorDescontoHora=" + valorDescontoHora +
-//                ", valorMensalista=" + valorMensalista +
-//                ", valorDiariaDiurna=" + valorDiariaDiurna +
-//                ", valorDiariaNoturna=" + valorDiariaNoturna +
-//                '}';
-//
-//    }
-
 
     @Override
     public String toString() {
@@ -68,6 +49,7 @@ public class Estacionamento {
         this.valorDiariaDiurna = valorDiariaDiurna;
         this.valorDiariaNoturna = valorDiariaNoturna;
     }
+
 
     public ArrayList<Acesso> getAcessos() {
         return acessos;
