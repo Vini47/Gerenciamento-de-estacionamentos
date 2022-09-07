@@ -59,28 +59,23 @@ public class Main {
     }
 
     private static void relatorioRegistros(ArrayList<Estacionamento> estacionamentos, Scanner ler) {
-        System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatÃ³rio");
+        System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatorio");
         String pesquisa = ler.nextLine();
         int nPesquisa = 0;
         boolean pesquisaSucesso = false;
         for (Estacionamento i : estacionamentos) {
 
             if (estacionamentos.get(nPesquisa).getNomeEstacionamento().equalsIgnoreCase(pesquisa)) {
-                System.out.println(i);
                 pesquisaSucesso = true;
             }
             nPesquisa++;
         }
         if (!pesquisaSucesso) {
-            System.out.println("Estacionamento nÃ£o encontrado");
+            System.out.println("Estacionamento nao encontrado");
         }
     }
 
-
-
-
-
-    //*--------------------------------------MÃ©todos----------------------------------------------------------------*/
+    //*--------------------------------------Metodos----------------------------------------------------------------*/
     private static void cadastrarEstacionamento(Scanner ler, ArrayList<Estacionamento> estacionamentos) {
 
         System.out.println("Insira o nome da empresa contratante: ");
@@ -93,28 +88,28 @@ public class Main {
         int capacidade = ler.nextInt();
         clearBuffer(ler);
 
-        System.out.println("Insira horÃ¡rio de abertura do estacionamento:");
+        System.out.println("Insira horario de abertura do estacionamento:");
         String horaAbertura = ler.nextLine();
 
-        System.out.println("Insira horÃ¡rio de fechamento do estacionamento:");
+        System.out.println("Insira horario de fechamento do estacionamento:");
         String horaFechamento = ler.nextLine();
 
         System.out.println("Insira a porcentagem de lucro do contratante:");
         double porcentagemLucro = ler.nextDouble();
-
-        System.out.println("Insira o valor da fraÃ§Ã£o: ");
-        double valorFracao = ler.nextDouble();
-
+        
+	    System.out.println("Insira o valor da fracao: ");
+	    double valorFracao = ler.nextDouble();
+	        
         System.out.println("Insira a porcentagem do desconto do valor da hora cheia: ");
         double valorDesconto = ler.nextDouble();
 
         System.out.println("Insira o valor do mensalista: ");
         double valorMensalista = ler.nextDouble();
 
-        System.out.println("Insira o valor da diÃ¡ria diurna: ");
+        System.out.println("Insira o valor da diaria diurna: ");
         double diariaDiurna = ler.nextDouble();
 
-        System.out.println("Insira o valor da diÃ¡ria noturna: ");
+        System.out.println("Insira o valor da diaria noturna: ");
         double diariaNoturna = ler.nextDouble();
 
 
@@ -123,7 +118,7 @@ public class Main {
 
         estacionamentos.add(estacionamento);
     }
-
+    
     //-------------------------------------------------------metodo case 2----------------------------------------------------//
     private static void cadastrarAcessos(ArrayList<Estacionamento>estacionamentos, Scanner ler, ArrayList<Acesso>acessos,  ArrayList<Evento> eventos, ArrayList<AcessoEvento> acessosEvento
                                          ) {
@@ -154,10 +149,10 @@ public class Main {
 
                     boolean continuar;
                     do {
-                        System.out.println("Insira a placa do veÃ­culo:");
+                        System.out.println("Insira a placa do veiculo:");
                         String placa = ler.nextLine();
 
-                        System.out.println("O proprietÃ¡rio do veÃ­culo Ã© um mensalista?");
+                        System.out.println("O proprietario do veiculo Ã© um mensalista?");
                         System.out.println("Digite 'S' para sim e qualquer outra caracter para nÃ£o");
                         boolean mensalista = false;
                         char mensal = ler.next().charAt(0);
@@ -222,10 +217,10 @@ public class Main {
                     if (numEvento <= eventos.size()) {
                         boolean continuar;
                         do {
-                            System.out.println("Insira a placa do veÃ­culo:");
+                            System.out.println("Insira a placa do veiculo:");
                             String placa = ler.nextLine();
-                            System.out.println("O proprietÃ¡rio do veÃ­culo Ã© um mensalista?");
-                            System.out.println("Digite 'S' para sim e qualquer outra caracter para nÃ£o");
+                            System.out.println("O proprietario do veiculo eh um mensalista?");
+                            System.out.println("Digite 'S' para sim e qualquer outro caracter para nao");
                             boolean mensalista = false;
                             char mensal = ler.next().charAt(0);
                             clearBuffer(ler);
