@@ -58,6 +58,8 @@ public class Main {
         System.out.println(estacionamentos);
     }
 
+    // case 3
+
     private static void relatorioRegistros(ArrayList<Estacionamento> estacionamentos, Scanner ler) {
         System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatorio");
         String pesquisa = ler.nextLine();
@@ -74,6 +76,8 @@ public class Main {
             System.out.println("Estacionamento nao encontrado");
         }
     }
+
+    // case 1
 
     //*--------------------------------------Metodos----------------------------------------------------------------*/
     private static void cadastrarEstacionamento(Scanner ler, ArrayList<Estacionamento> estacionamentos) {
@@ -119,6 +123,7 @@ public class Main {
         estacionamentos.add(estacionamento);
     }
     
+    // case 2
     //-------------------------------------------------------metodo case 2----------------------------------------------------//
     private static void cadastrarAcessos(ArrayList<Estacionamento>estacionamentos, Scanner ler, ArrayList<Acesso>acessos,  ArrayList<Evento> eventos, ArrayList<AcessoEvento> acessosEvento
                                          ) {
