@@ -118,7 +118,21 @@ public class Main {
 
                 }
                 case '3' -> {
-                    relatórioRegistros(estacionamentos, ler);
+                        System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatório");
+                        String pesquisa = ler.nextLine();
+                        int nPesquisa = 0;
+                        boolean pesquisaSucesso = false;
+                        for (Estacionamento i : estacionamentos) {
+
+                            if(estacionamentos.get(nPesquisa).getNomeEstacionamento().equalsIgnoreCase(pesquisa)){
+                                System.out.println(i);
+                                pesquisaSucesso = true;
+                            }
+                            nPesquisa ++;
+                        }
+                        if(!pesquisaSucesso){
+                            System.out.println("Estacionamento não encontrado");
+                        }
                     }
 
 
@@ -138,6 +152,7 @@ public class Main {
         System.out.println(estacionamentos);
     }
 
+    /*
     private static void relatórioRegistros(ArrayList<Estacionamento> estacionamentos,Scanner ler) {
         System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatório");
         String pesquisa = ler.nextLine();
@@ -155,7 +170,7 @@ public class Main {
             System.out.println("Estacionamento não encontrado");
         }
     }
-
+    */
     //*--------------------------------------Métodos----------------------------------------------------------------*/
     private static void cadastrarEstacionamento(Scanner ler, ArrayList<Estacionamento> estacionamentos) {
 
