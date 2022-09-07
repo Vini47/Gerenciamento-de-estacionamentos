@@ -16,7 +16,8 @@ public class Estacionamento {
     private double valorDiariaDiurna;
     private double valorDiariaNoturna;
     private ArrayList<Acesso> acessos = new ArrayList<Acesso>();
-
+    private ArrayList<AcessoEvento> acessosEvento = new ArrayList<AcessoEvento>();
+    private ArrayList<Evento> eventos = new ArrayList<Evento>();
 
     @Override
     public String toString() {
@@ -33,6 +34,8 @@ public class Estacionamento {
                 ", valorDiariaDiurna=" + valorDiariaDiurna +
                 ", valorDiariaNoturna=" + valorDiariaNoturna +
                 ", acessos=" + acessos +
+                ", acessosEvento=" + acessosEvento +
+                ", eventos=" + eventos +
                 '}';
     }
 
@@ -50,6 +53,21 @@ public class Estacionamento {
         this.valorDiariaNoturna = valorDiariaNoturna;
     }
 
+    public ArrayList<AcessoEvento> getAcessosEvento() {
+        return acessosEvento;
+    }
+
+    public void setAcessosEvento(ArrayList<AcessoEvento> acessosEvento) {
+        this.acessosEvento = acessosEvento;
+    }
+
+    public ArrayList<Evento> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(ArrayList<Evento> eventos) {
+        this.eventos = eventos;
+    }
 
     public ArrayList<Acesso> getAcessos() {
         return acessos;

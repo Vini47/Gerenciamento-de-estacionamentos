@@ -8,6 +8,9 @@ public class Acesso {
     private LocalDateTime diaHoraEntrada;
     private LocalDateTime diaHoraSaida;
 
+    public Acesso(String placa) {
+    }
+
     //construtor para acesso de Evento
     public Acesso(String placa, boolean mensalista) {
         this.placa = placa;
