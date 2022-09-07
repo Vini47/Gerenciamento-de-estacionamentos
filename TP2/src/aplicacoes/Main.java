@@ -38,7 +38,7 @@ public class Main {
                     cadastrarAcessos(estacionamentos, ler, acessos, eventos,acessosEvento);
                 }
                 case '3' -> {
-                    relatórioRegistros(estacionamentos, ler);
+                    relatorioRegistros(estacionamentos, ler);
                 }
 
 
@@ -51,15 +51,17 @@ public class Main {
                 }
 
                 case '0' -> System.out.println("PROGRAMA ENCERRADO!");
-                default -> System.out.println("OPÇÃO INVALÍDA!");
+                default -> System.out.println("OPÃ‡ÃƒO INVALÃ�DA!");
             }
         } while (menu != '0');
 
         System.out.println(estacionamentos);
     }
 // teste
-    private static void relatórioRegistros(ArrayList<Estacionamento> estacionamentos, Scanner ler) {
-        System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatório");
+
+    // teste vini
+    private static void relatorioRegistros(ArrayList<Estacionamento> estacionamentos, Scanner ler) {
+        System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatÃ³rio");
         String pesquisa = ler.nextLine();
         int nPesquisa = 0;
         boolean pesquisaSucesso = false;
@@ -72,7 +74,7 @@ public class Main {
             nPesquisa++;
         }
         if (!pesquisaSucesso) {
-            System.out.println("Estacionamento não encontrado");
+            System.out.println("Estacionamento nÃ£o encontrado");
         }
     }
 
@@ -80,7 +82,7 @@ public class Main {
 
 
 
-    //*--------------------------------------Métodos----------------------------------------------------------------*/
+    //*--------------------------------------MÃ©todos----------------------------------------------------------------*/
     private static void cadastrarEstacionamento(Scanner ler, ArrayList<Estacionamento> estacionamentos) {
 
         System.out.println("Insira o nome da empresa contratante: ");
@@ -93,16 +95,16 @@ public class Main {
         int capacidade = ler.nextInt();
         clearBuffer(ler);
 
-        System.out.println("Insira horário de abertura do estacionamento:");
+        System.out.println("Insira horÃ¡rio de abertura do estacionamento:");
         String horaAbertura = ler.nextLine();
 
-        System.out.println("Insira horário de fechamento do estacionamento:");
+        System.out.println("Insira horÃ¡rio de fechamento do estacionamento:");
         String horaFechamento = ler.nextLine();
 
         System.out.println("Insira a porcentagem de lucro do contratante:");
         double porcentagemLucro = ler.nextDouble();
 
-        System.out.println("Insira o valor da fração: ");
+        System.out.println("Insira o valor da fraÃ§Ã£o: ");
         double valorFracao = ler.nextDouble();
 
         System.out.println("Insira a porcentagem do desconto do valor da hora cheia: ");
@@ -111,10 +113,10 @@ public class Main {
         System.out.println("Insira o valor do mensalista: ");
         double valorMensalista = ler.nextDouble();
 
-        System.out.println("Insira o valor da diária diurna: ");
+        System.out.println("Insira o valor da diÃ¡ria diurna: ");
         double diariaDiurna = ler.nextDouble();
 
-        System.out.println("Insira o valor da diária noturna: ");
+        System.out.println("Insira o valor da diÃ¡ria noturna: ");
         double diariaNoturna = ler.nextDouble();
 
 
@@ -140,7 +142,7 @@ public class Main {
 
         clearBuffer(ler);
         if (numEstacionamento <= estacionamentos.size()) {
-            System.out.println("-------Informções do Estacionamento------");
+            System.out.println("-------InformÃ§Ãµes do Estacionamento------");
             System.out.println(estacionamentos.get(numEstacionamento));
             System.out.println("------------------------------------------");
             System.out.println("Qual acesso deseja cadastras");
@@ -154,11 +156,11 @@ public class Main {
 
                     boolean continuar;
                     do {
-                        System.out.println("Insira a placa do veículo:");
+                        System.out.println("Insira a placa do veÃ­culo:");
                         String placa = ler.nextLine();
 
-                        System.out.println("O proprietário do veículo é um mensalista?");
-                        System.out.println("Digite 'S' para sim e qualquer outra caracter para não");
+                        System.out.println("O proprietÃ¡rio do veÃ­culo Ã© um mensalista?");
+                        System.out.println("Digite 'S' para sim e qualquer outra caracter para nÃ£o");
                         boolean mensalista = false;
                         char mensal = ler.next().charAt(0);
                         clearBuffer(ler);
@@ -167,14 +169,14 @@ public class Main {
                             mensalista = true;
                         }
 
-                        System.out.println("Insira o dia de entrada do veículo e o horário: ");
+                        System.out.println("Insira o dia de entrada do veÃ­culo e o horÃ¡rio: ");
                         System.out.println("OBS = Utilize o seguinte formato");
                         System.out.println("ano-mes-diaThora:minutos:segundos");
                         System.out.println("Exemplo: 2022-04-19T10:48:25");
                         String entrada = ler.nextLine();
                         LocalDateTime dateTimeEntrada = LocalDateTime.parse(entrada);
 
-                        System.out.println("Insira o dia de saída do veículo e o horário: ");
+                        System.out.println("Insira o dia de saÃ­da do veÃ­culo e o horÃ¡rio: ");
                         System.out.println("OBS = Utilize o seguinte formato");
                         System.out.println("ano-mes-diaThora:minutos:segundos");
                         System.out.println("Exemplo: 2022-04-19T10:48:25");
@@ -188,7 +190,7 @@ public class Main {
 
                         continuar = true;
                         System.out.println("Deseja adicionar outro acesso?");
-                        System.out.println("Digite 'N' para não, e voltar ao menu!");
+                        System.out.println("Digite 'N' para nÃ£o, e voltar ao menu!");
                         char decisao = ler.next().charAt(0);
                         if (decisao == 'N' | decisao == 'n') {
                             continuar = false;
@@ -222,10 +224,10 @@ public class Main {
                     if (numEvento <= eventos.size()) {
                         boolean continuar;
                         do {
-                            System.out.println("Insira a placa do veículo:");
+                            System.out.println("Insira a placa do veÃ­culo:");
                             String placa = ler.nextLine();
-                            System.out.println("O proprietário do veículo é um mensalista?");
-                            System.out.println("Digite 'S' para sim e qualquer outra caracter para não");
+                            System.out.println("O proprietÃ¡rio do veÃ­culo Ã© um mensalista?");
+                            System.out.println("Digite 'S' para sim e qualquer outra caracter para nÃ£o");
                             boolean mensalista = false;
                             char mensal = ler.next().charAt(0);
                             clearBuffer(ler);
@@ -239,7 +241,7 @@ public class Main {
 
                             continuar = true;
                             System.out.println("Deseja adicionar outro acesso?");
-                            System.out.println("Digite 'N' para não, e voltar ao menu!");
+                            System.out.println("Digite 'N' para nÃ£o, e voltar ao menu!");
                             char decisao = ler.next().charAt(0);
                             if (decisao == 'N' | decisao == 'n') {
                                 continuar = false;
@@ -248,16 +250,16 @@ public class Main {
                         } while (continuar);
 
                     } else {
-                        System.out.println("OPÇÃO INVÁLIDA!");
+                        System.out.println("OPÃ‡ÃƒO INVÃ�LIDA!");
                     }
                 }
                 default -> {
-                    System.out.println("OPÇÃO INVÁLIDA!");
+                    System.out.println("OPÃ‡ÃƒO INVÃ�LIDA!");
                 }
             }
 
         } else {
-            System.out.println("OPÇÃO INVÁLIDA");
+            System.out.println("OPÃ‡ÃƒO INVÃ�LIDA");
         }
 
     }
