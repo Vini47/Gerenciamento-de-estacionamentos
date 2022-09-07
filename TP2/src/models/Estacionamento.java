@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 public class Estacionamento {
 
     private String nomeEmpresa;
@@ -13,11 +15,30 @@ public class Estacionamento {
     private double valorMensalista;
     private double valorDiariaDiurna;
     private double valorDiariaNoturna;
-    private Acesso acesso;
+    private ArrayList<Acesso> acessos = new ArrayList<Acesso>();
+
+//    @Override
+//    public String toString() {
+//
+//        return "Estacionamento{" +
+//                "nomeEmpresa='" + nomeEmpresa + '\'' +
+//                ", nomeEstacionamento='" + nomeEstacionamento + '\'' +
+//                ", capacidade=" + capacidade +
+//                ", horaAbertura='" + horaAbertura + '\'' +
+//                ", horaFechamento='" + horaFechamento + '\'' +
+//                ", porcentagemLucro=" + porcentagemLucro +
+//                ", valorFracao=" + valorFracao +
+//                ", valorDescontoHora=" + valorDescontoHora +
+//                ", valorMensalista=" + valorMensalista +
+//                ", valorDiariaDiurna=" + valorDiariaDiurna +
+//                ", valorDiariaNoturna=" + valorDiariaNoturna +
+//                '}';
+//
+//    }
+
 
     @Override
     public String toString() {
-
         return "Estacionamento{" +
                 "nomeEmpresa='" + nomeEmpresa + '\'' +
                 ", nomeEstacionamento='" + nomeEstacionamento + '\'' +
@@ -30,10 +51,9 @@ public class Estacionamento {
                 ", valorMensalista=" + valorMensalista +
                 ", valorDiariaDiurna=" + valorDiariaDiurna +
                 ", valorDiariaNoturna=" + valorDiariaNoturna +
+                ", acessos=" + acessos +
                 '}';
-
     }
-
 
     public Estacionamento(String nomeEmpresa, String nomeEstacionamento, int capacidade, String horaAbertura, String horaFechamento, double porcentagemLucro, double valorFracao, double valorDescontoHora, double valorMensalista, double valorDiariaDiurna, double valorDiariaNoturna) {
         this.nomeEmpresa = nomeEmpresa;
@@ -49,27 +69,12 @@ public class Estacionamento {
         this.valorDiariaNoturna = valorDiariaNoturna;
     }
 
-    public Estacionamento(String nomeEmpresa, String nomeEstacionamento, int capacidade, String horaAbertura, String horaFechamento, double porcentagemLucro, double valorFracao, double valorDescontoHora, double valorMensalista, double valorDiariaDiurna, double valorDiariaNoturna, Acesso acesso) {
-        this.nomeEmpresa = nomeEmpresa;
-        this.nomeEstacionamento = nomeEstacionamento;
-        this.capacidade = capacidade;
-        this.horaAbertura = horaAbertura;
-        this.horaFechamento = horaFechamento;
-        this.porcentagemLucro = porcentagemLucro;
-        this.valorFracao = valorFracao;
-        this.valorDescontoHora = valorDescontoHora;
-        this.valorMensalista = valorMensalista;
-        this.valorDiariaDiurna = valorDiariaDiurna;
-        this.valorDiariaNoturna = valorDiariaNoturna;
-        this.acesso = acesso;
+    public ArrayList<Acesso> getAcessos() {
+        return acessos;
     }
 
-    public Acesso getAcesso() {
-        return acesso;
-    }
-
-    public void setAcesso(Acesso acesso) {
-        this.acesso = acesso;
+    public void setAcessos(ArrayList<Acesso> acessos) {
+        this.acessos = acessos;
     }
 
     public String getNomeEmpresa() {

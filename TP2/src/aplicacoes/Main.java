@@ -83,7 +83,8 @@ public class Main {
                                     Acesso acesso = new Acesso(placa, mensalista, dateTimeEntrada, dateTimeSaida);
                                     acessos.add(acesso);
 
-                                    estacionamentos.get(numEstacionamento).setAcesso(acesso);
+
+                                    estacionamentos.get(numEstacionamento).setAcessos(acessos);
                                     //estacionamentos.get(numEstacionamento).setAcesso(acesso);
                                     System.out.println(estacionamentos);
 
