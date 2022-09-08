@@ -51,30 +51,11 @@ public class Main {
                 }
 
                 case '0' -> System.out.println("PROGRAMA ENCERRADO!");
-                default -> System.out.println("OPÃ‡ÃƒO INVALÃ�DA!");
+                default -> System.out.println("OPCAO INVALIDA!");
             }
         } while (menu != '0');
 
         System.out.println(estacionamentos);
-    }
-
-    // case 3
-
-    private static void relatorioRegistros(ArrayList<Estacionamento> estacionamentos, Scanner ler) {
-        System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatorio");
-        String pesquisa = ler.nextLine();
-        int nPesquisa = 0;
-        boolean pesquisaSucesso = false;
-        for (Estacionamento i : estacionamentos) {
-
-            if (estacionamentos.get(nPesquisa).getNomeEstacionamento().equalsIgnoreCase(pesquisa)) {
-                pesquisaSucesso = true;
-            }
-            nPesquisa++;
-        }
-        if (!pesquisaSucesso) {
-            System.out.println("Estacionamento nao encontrado");
-        }
     }
 
     // case 1
@@ -140,7 +121,7 @@ public class Main {
 
         clearBuffer(ler);
         if (numEstacionamento <= estacionamentos.size()) {
-            System.out.println("-------InformÃ§Ãµes do Estacionamento------");
+            System.out.println("-------Informacoes do Estacionamento------");
             System.out.println(estacionamentos.get(numEstacionamento));
             System.out.println("------------------------------------------");
             System.out.println("Qual acesso deseja cadastras");
@@ -157,8 +138,8 @@ public class Main {
                         System.out.println("Insira a placa do veiculo:");
                         String placa = ler.nextLine();
 
-                        System.out.println("O proprietario do veiculo Ã© um mensalista?");
-                        System.out.println("Digite 'S' para sim e qualquer outra caracter para nÃ£o");
+                        System.out.println("O proprietario do veiculo é um mensalista?");
+                        System.out.println("Digite 'S' para sim e qualquer outra caracter para nao");
                         boolean mensalista = false;
                         char mensal = ler.next().charAt(0);
                         clearBuffer(ler);
@@ -167,14 +148,14 @@ public class Main {
                             mensalista = true;
                         }
 
-                        System.out.println("Insira o dia de entrada do veÃ­culo e o horÃ¡rio: ");
+                        System.out.println("Insira o dia de entrada do veiculo e o horario: ");
                         System.out.println("OBS = Utilize o seguinte formato");
                         System.out.println("ano-mes-diaThora:minutos:segundos");
                         System.out.println("Exemplo: 2022-04-19T10:48:25");
                         String entrada = ler.nextLine();
                         LocalDateTime dateTimeEntrada = LocalDateTime.parse(entrada);
 
-                        System.out.println("Insira o dia de saÃ­da do veÃ­culo e o horÃ¡rio: ");
+                        System.out.println("Insira o dia de saida do veiculo e o horario: ");
                         System.out.println("OBS = Utilize o seguinte formato");
                         System.out.println("ano-mes-diaThora:minutos:segundos");
                         System.out.println("Exemplo: 2022-04-19T10:48:25");
@@ -188,7 +169,7 @@ public class Main {
 
                         continuar = true;
                         System.out.println("Deseja adicionar outro acesso?");
-                        System.out.println("Digite 'N' para nÃ£o, e voltar ao menu!");
+                        System.out.println("Digite 'N' para nao, e voltar ao menu!");
                         char decisao = ler.next().charAt(0);
                         if (decisao == 'N' | decisao == 'n') {
                             continuar = false;
@@ -239,7 +220,7 @@ public class Main {
 
                             continuar = true;
                             System.out.println("Deseja adicionar outro acesso?");
-                            System.out.println("Digite 'N' para nÃ£o, e voltar ao menu!");
+                            System.out.println("Digite 'N' para nao, e voltar ao menu!");
                             char decisao = ler.next().charAt(0);
                             if (decisao == 'N' | decisao == 'n') {
                                 continuar = false;
@@ -248,18 +229,38 @@ public class Main {
                         } while (continuar);
 
                     } else {
-                        System.out.println("OPÃ‡ÃƒO INVÃ�LIDA!");
+                        System.out.println("OPCAO INVALIDA!");
                     }
                 }
                 default -> {
-                    System.out.println("OPÃ‡ÃƒO INVÃ�LIDA!");
+                    System.out.println("OPCAO INVALIDA!");
                 }
             }
 
         } else {
-            System.out.println("OPÃ‡ÃƒO INVÃ�LIDA");
+            System.out.println("OPCAO INVALIDA!");
         }
 
+    }
+    
+
+    // case 3
+
+    private static void relatorioRegistros(ArrayList<Estacionamento> estacionamentos, Scanner ler) {
+        System.out.println("Pesquise pelo nome do estacionamento que deseja  gerar relatorio");
+        String pesquisa = ler.nextLine();
+        int nPesquisa = 0;
+        boolean pesquisaSucesso = false;
+        for (Estacionamento i : estacionamentos) {
+
+            if (estacionamentos.get(nPesquisa).getNomeEstacionamento().equalsIgnoreCase(pesquisa)) {
+                pesquisaSucesso = true;
+            }
+            nPesquisa++;
+        }
+        if (!pesquisaSucesso) {
+            System.out.println("Estacionamento nao encontrado");
+        }
     }
 
     private static void clearBuffer(Scanner ler) {
