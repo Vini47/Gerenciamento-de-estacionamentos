@@ -1,8 +1,5 @@
 package View;
 
-import Controller.Main;
-import Model.Aluno;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -59,9 +56,12 @@ public class TelaPrincipal {
 //        jFrame.add(menu);
 
         button1.addActionListener(this::cadastrarAluno);
-        button2.addActionListener(this::listarAlunos);
+        button2.addActionListener(this::listarAluno);
         button3.addActionListener(this::pesquisaAluno);
         button4.addActionListener(this::editarAluno);
+        button5.addActionListener(e -> {
+            jFrame.dispose();
+        });
 
     }
 
@@ -69,8 +69,8 @@ public class TelaPrincipal {
         new CadastrarAluno();
     }
 
-    private void listarAlunos(ActionEvent actionEvent) {
-        new ListarAlunos();
+    private void listarAluno(ActionEvent actionEvent) {
+        new ListarAluno();
     }
 
     private void pesquisaAluno(ActionEvent actionEvent) {

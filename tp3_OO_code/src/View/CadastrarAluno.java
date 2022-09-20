@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class CadastrarAluno {
 
-        static int intMenu = 0;
         static JTextField stringNome;
         static JTextField stringCurso;
         static JTextField stringMatricula;
@@ -96,14 +95,15 @@ public class CadastrarAluno {
 
 
                 salvar.addActionListener(this::ciarAluno);
-                intMenu = 0;
+                salvar.addActionListener(e -> {
+                        cadastrar_aluno.dispose();
+                });
+
+                sair.addActionListener(e -> {
+                        cadastrar_aluno.dispose();
+                });
 
 
-
-        }
-
-        public static int getIntMenu() {
-                return intMenu;
         }
 
         public static JTextField getStringNome() {
@@ -123,14 +123,10 @@ public class CadastrarAluno {
         }
 
 
-        public int ciarAluno(ActionEvent actionEvent) {
+        public void ciarAluno(ActionEvent actionEvent) {
 
-                String a = stringNome.getText();
-                String b = stringCurso.getText();
-                String c = stringMatricula.getText();
-                String d = stringEmail.getText();
+                Main.salvarAluno(Aluno.getAlunos(), stringNome.getText(), stringCurso.getText(),stringMatricula.getText(),stringEmail.getText());
 
-                intMenu = 1;
 
                 JOptionPane.showMessageDialog(null, "Aluno Adicionado: \n" +
                         "Nome: " + stringNome.getText() + "\n"+
@@ -139,7 +135,9 @@ public class CadastrarAluno {
                         "E-mail: " + stringEmail.getText() + "\n"
 
                 );
-               return 1;
+
+                JOptionPane.showMessageDialog(null, Main.imprimirAluno(Aluno.getAlunos()));
+
 
         }
 

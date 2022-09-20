@@ -12,7 +12,7 @@ public class Aluno {
     }
 
     @Override
-    public String toString() {
+    public  String toString() {
         return "Aluno{" +
                 "nome='" + nome + '\'' +
                 ", curso='" + curso + '\'' +
@@ -60,7 +60,10 @@ public class Aluno {
         this.email = email;
     }
 
-
+    public static ArrayList<Aluno> getAlunos(){
+        ArrayList<Aluno> alunos = new ArrayList();
+        return alunos;
+    }
 }
 
 
